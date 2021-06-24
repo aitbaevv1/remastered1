@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remastered</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <svg display="none">
+        <symbol viewBox="0 0 64 64" id="icon1">
+        <image id="image0" width="64" height="64"
+                xlink:href="data:image/png;base64,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" />
+
+        </symbol>
+        <symbol id="icon2" viewBox="0 0 64 64">
+            <image id="image0" width="64" height="64"
+                xlink:href="data:image/png;base64,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" />
+        </symbol>
+        <symbol id="icon3" viewBox="0 0 64 64">
+            <image id="image0" width="64" height="64"
+                xlink:href="data:image/png;base64,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" />
+        </symbol>
+        <symbol id="icon4" viewBox="0 0 64 64">
+            <image id="image0" width="64" height="64"
+                xlink:href="data:image/png;base64,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" />
+        </symbol>
+    </svg>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top__wrapper">
+                    <div class="header-top__left">
+                        <div class="header-top__left-logo">
+                            <img src="img/logo.svg" alt="">
+                        </div>
+                        <nav class="header-top__left-nav">
+                            <ul class="header-top__left-nav__list">
+                                <li class="header-top__left-nav__list-li">
+                                    <a href="#" class="header-top__left-nav__list-li__link header-top__left-nav__list-li__link-after lang" key="games">GAMES</a>
+                                </li>
+                                <li class="header-top__left-nav__list-li">
+                                    <a href="#" class="header-top__left-nav__list-li__link lang" key="news">NEWS</a>
+                                </li>
+                                <li class="header-top__left-nav__list-li">
+                                    <a href="#" class="header-top__left-nav__list-li__link lang" key="community">COMMUNITY</a>
+                                </li>
+                                <li class="header-top__left-nav__list-li">
+                                    <a href="#" class="header-top__left-nav__list-li__link lang" key="support">SUPPORT</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header-top__right">
+                        <a href="#" class="header-top__right-link lang" key="header-top__right-link">УЧЕТНАЯ ЗАПИСЬ</a>
+                        <div class="header-top__right-languages header-top__right-languages-desctop">
+                            <div class="header-top__right-languages__active">RUSSIAN</div>
+                            <ul class="header-top__right-languages__list">
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="ru" href="#">RUSSIAN</a>
+                                </li>
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="en" href="#">ENGLISH</a>
+                                </li>
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="ch" href="#">CHINA</a>
+                                </li>
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="ko" href="#">KOREAN</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header-burger">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-bottom__wrapper">
+                    <div class="header-bottom__left">
+                        <nav class="header-bottom__left-nav">
+                            <ul class="header-bottom__left-nav__list">
+                                <li class="header-bottom__left-nav__list-li active">
+                                    <a class="lang" href="#" key="header-bottom__left-nav__list-li-1">Главная</a>
+                                </li>
+                                <li class="header-bottom__left-nav__list-li">
+                                    <a class="lang" href="#" key="header-bottom__left-nav__list-li-2">Аукцион</a>
+                                </li>
+                                <li class="header-bottom__left-nav__list-li">
+                                    <a class="lang" href="#" key="header-bottom__left-nav__list-li-3">Статистика</a>
+                                </li>
+                                <li class="header-bottom__left-nav__list-li">
+                                    <a class="lang" href="#" key="header-bottom__left-nav__list-li-4">База знаний</a>
+                                </li>
+                                <li class="header-bottom__left-nav__list-li">
+                                    <a class="lang" href="#" key="header-bottom__left-nav__list-li-5">Партнерство</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header-bottom__right">
+                        <div class="header-bottom__right-button">
+                            <a href="#" class="lang" key="header-bottom__right-button">РЕГИСТРАЦИЯ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-mobile">
+            <nav class="header-mobile__top-nav">
+                <ul class="header-top__left-nav__list">
+                    <li class="header-top__left-nav__list-li">
+                        <a href="#" class="header-top__left-nav__list-li__link header-top__left-nav__list-li__link-after lang" key='games'>GAMES</a>
+                    </li>
+                    <li class="header-top__left-nav__list-li">
+                        <a href="#" class="header-top__left-nav__list-li__link lang" key="news">NEWS</a>
+                    </li>
+                    <li class="header-top__left-nav__list-li">
+                        <a href="#" class="header-top__left-nav__list-li__link lang" key="community">COMMUNITY</a>
+                    </li>
+                    <li class="header-top__left-nav__list-li">
+                        <a href="#" class="header-top__left-nav__list-li__link lang" key="support">SUPPORT</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="header-mobile__bottom-nav">
+                <ul class="header-bottom__left-nav__list">
+                    <li class="header-bottom__left-nav__list-li">
+                        <a class="lang" href="#" key="header-bottom__left-nav__list-li-1">Главная</a>
+                    </li>
+                    <li class="header-bottom__left-nav__list-li">
+                        <a class="lang" href="#" key='header-bottom__left-nav__list-li-2'>Аукцион</a>
+                    </li>
+                    <li class="header-bottom__left-nav__list-li">
+                        <a class="lang" href="#" key="header-bottom__left-nav__list-li-3">Статистика</a>
+                    </li>
+                    <li class="header-bottom__left-nav__list-li">
+                        <a class="lang" href="#" key="header-bottom__left-nav__list-li-4">База знаний</a>
+                    </li>
+                    <li class="header-bottom__left-nav__list-li">
+                        <a class="lang" href="#" key="header-bottom__left-nav__list-li-5">Партнерство</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="header-top__right-link-desctop lang" key="header-top__right-link">УЧЕТНАЯ ЗАПИСЬ</a>
+            <a href="#" class="header-top__right-link-desctop lang" key="header-bottom__right-button">РЕГИСТРАЦИЯ</a>
+            <div class="header-top__right-languages header-top__right-languages-mobile">
+                <div class="header-top__right-languages__active">RUSSIAN</div>
+                <ul class="header-top__right-languages__list">
+                    <li class="header-top__right-languages__list-item">
+                        <a id="ru" class="translate" href="#">RUSSIAN</a>
+                    </li>
+                    <li class="header-top__right-languages__list-item">
+                        <a id="en" class="translate" href="#">ENGLISH</a>
+                    </li>
+                    <li class="header-top__right-languages__list-item">
+                        <a id="ch" class="translate" href="#">CHINA</a>
+                    </li>
+                    <li class="header-top__right-languages__list-item">
+                        <a id="ko"  class="translate" href="#">KOREAN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="main">
+            <div class="container">
+                <div class="main-block">
+                    <div class="main-content">
+                        <div class="main-logo">
+                            <img src="img/main-logo.svg" alt="">
+                        </div>
+                        <h1 class="main-title lang" key="main-title">
+                            ЛУЧШЕЕ ИЗ ВСЕХ ЭПИКОВ <br>В ОДНОЙ ИГРЕ
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <video src="img/Valhalla-Age Сайт сервера L2R  United. [Valhalla-Age - bg_top] (null) (via Skyload).mp4" loop autoplay muted src="" class="main-video">
+                <!-- <source type="video/mp4; codecs="avc1.42E01E, mp4a.40.2""> -->
+            </video>
+        </div>
+        <div class="slider">
+            <div class="container">
+                <div class="main-start">
+                    <div class="main-start__content">
+                            <div class="main-start__content-text lang" key="main-start__content-text">
+                                Начни свое путешествие по новому удивительному миру <span>Rappelz</span> прямо сейчас!
+                            </div>
+                            <div class="main-start__content-btn">
+                                <a key="main-start__content-btn" class="lang" href="#">НАЧАТЬ ИГРАТЬ</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="main-slider"> 
+                    <div class="main-slider__item">
+                        <img src="img/slider-img.png" alt="">
+                    </div>
+                    <div class="main-slider__item">
+                        <img src="img/slider-img.png" alt="">
+                    </div>
+                    <div class="main-slider__item">
+                        <img src="img/slider-img.png" alt="">
+                    </div>
+                    <div class="main-slider__item">
+                        <img src="img/slider-img.png" alt="">
+                    </div>
+                    <div class="main-slider__item">
+                        <img src="img/slider-img.png" alt="">
+                    </div>
+                    <div class="main-slider__item">
+                        <img src="img/slider-img.png" alt="">
+                    </div>
+                    <div class="main-slider__item">
+                        <img src="img/slider-img.png" alt="">
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="news">
+            <div class="container">
+                <div class="news-wrapper">
+                    <div class="news-left">
+                        <h2 class="section-title lang" key="section-title-1">Последние новости</h2>
+                        <div class="news-left__item">
+                            <div class="news-left__item-wrapper">
+                                <div class="news-left__img">
+                                    <img src="img/news-1.png" alt="">
+                                </div>
+                                <div class="news-left__content">
+                                    <a href="#" class="news-left__content-title lang" key='news-left__content-title'>Результаты технических работ 28.05.2021</a>
+                                    <div class="news-left__content-text lang" key="news-left__content-text">
+                                        Внеплановые технические работы завершены.
+                                        Предлагаем ознакомиться со списком изменений.
+                                    </div>
+                                    <div class="news-left__content-bottom">
+                                        <a href="#" class="news-left__content-bottom__link lang" key="news-left__content-bottom__link">Подробнее</a>
+                                        <div class="news-left__content-bottom__text">
+                                            <span class="lang" key='news-left__content-bottom__text'>Другое</span>
+                                            31.05.2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-left__item">
+                            <div class="news-left__item-wrapper">
+                                <div class="news-left__img">
+                                    <img src="img/news-1.png" alt="">
+                                </div>
+                                <div class="news-left__content">
+                                    <a href="#" class="news-left__content-title lang" key='news-left__content-title'>Результаты технических работ 28.05.2021</a>
+                                    <div class="news-left__content-text lang" key="news-left__content-text">
+                                        Внеплановые технические работы завершены.
+                                        Предлагаем ознакомиться со списком изменений.
+                                    </div>
+                                    <div class="news-left__content-bottom">
+                                        <a href="#" class="news-left__content-bottom__link lang" key="news-left__content-bottom__link">Подробнее</a>
+                                        <div class="news-left__content-bottom__text">
+                                            <span class="lang" key='news-left__content-bottom__text'>Другое</span>
+                                            31.05.2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-left__item">
+                            <div class="news-left__item-wrapper">
+                                <div class="news-left__img">
+                                    <img src="img/news-1.png" alt="">
+                                </div>
+                                <div class="news-left__content">
+                                    <a href="#" class="news-left__content-title lang" key='news-left__content-title'>Результаты технических работ 28.05.2021</a>
+                                    <div class="news-left__content-text lang" key="news-left__content-text">
+                                        Внеплановые технические работы завершены.
+                                        Предлагаем ознакомиться со списком изменений.
+                                    </div>
+                                    <div class="news-left__content-bottom">
+                                        <a href="#" class="news-left__content-bottom__link lang" key="news-left__content-bottom__link">Подробнее</a>
+                                        <div class="news-left__content-bottom__text">
+                                            <span class="lang" key='news-left__content-bottom__text'>Другое</span>
+                                            31.05.2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-left__item">
+                            <div class="news-left__item-wrapper">
+                                <div class="news-left__img">
+                                    <img src="img/news-1.png" alt="">
+                                </div>
+                                <div class="news-left__content">
+                                    <a href="#" class="news-left__content-title lang" key='news-left__content-title'>Результаты технических работ 28.05.2021</a>
+                                    <div class="news-left__content-text lang" key="news-left__content-text">
+                                        Внеплановые технические работы завершены.
+                                        Предлагаем ознакомиться со списком изменений.
+                                    </div>
+                                    <div class="news-left__content-bottom">
+                                        <a href="#" class="news-left__content-bottom__link lang" key="news-left__content-bottom__link">Подробнее</a>
+                                        <div class="news-left__content-bottom__text">
+                                            <span class="lang" key='news-left__content-bottom__text'>Другое</span>
+                                            31.05.2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-left__item">
+                            <div class="news-left__item-wrapper">
+                                <div class="news-left__img">
+                                    <img src="img/news-1.png" alt="">
+                                </div>
+                                <div class="news-left__content">
+                                    <a href="#" class="news-left__content-title lang" key='news-left__content-title'>Результаты технических работ 28.05.2021</a>
+                                    <div class="news-left__content-text lang" key="news-left__content-text">
+                                        Внеплановые технические работы завершены.
+                                        Предлагаем ознакомиться со списком изменений.
+                                    </div>
+                                    <div class="news-left__content-bottom">
+                                        <a href="#" class="news-left__content-bottom__link lang" key="news-left__content-bottom__link">Подробнее</a>
+                                        <div class="news-left__content-bottom__text">
+                                            <span class="lang" key='news-left__content-bottom__text'>Другое</span>
+                                            31.05.2021
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="news-left__link">Все новости</a>
+                    </div>
+                    <div class="news-right">
+                        <h2 class="section-title section-title-center lang" key='section-title-2'>Статус серверов</h2>
+                        <div class="news-right__item news-right__item-1">
+                            <div class="news-right__status">
+                                <div class="news-right__status-left">RR: NEW</div>
+                                <img src="img/server-1.svg" alt="">
+                                <div class="news-right__status-right lang" key='news-right__status-right'>
+                                    Онлайн:
+                                    <span>645</span>
+                                </div>
+                            </div>
+                            <div class="news-right__item-epic">
+                                <div class="news-right__item-epic__top">
+                                    <div class="news-right__item-epic__top-title">Epic: 5</div>
+                                    <div class="news-right__item-epic__top-title">Patch: 5.2</div>
+                                </div>
+                                <div class="news-right__item-epic__text lang" key='news-right__item-epic__text'>Кол-во уникальных игроков</div>
+                                <div class="news-right__item-epic__bottom">
+                                    <div class="news-right__item-epic__bottom-text lang" key='news-right__item-epic__bottom-text-1'>
+                                        За неделю: <span>3 220</span>
+                                    </div>
+                                    <div class="news-right__item-epic__bottom-text lang" key='news-right__item-epic__bottom-text-2'>
+                                        За месяц: <span>15 200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-right__item">
+                            <div class="news-right__status">
+                                <div class="news-right__status-left">RR: MAIN</div>
+                                <img src="img/server-2.svg" alt="">
+                                <div class="news-right__status-right lang" key='news-right__status-right-2'>
+                                    Онлайн:
+                                    <span>232</span>
+                                </div>
+                            </div>
+                            <div class="news-right__item-epic">
+                                <div class="news-right__item-epic__top">
+                                    <div class="news-right__item-epic__top-title">Epic: 5</div>
+                                    <div class="news-right__item-epic__top-title">Patch: 5.2</div>
+                                </div>
+                                <div class="news-right__item-epic__text lang" key='news-right__item-epic__text'>Кол-во уникальных игроков</div>
+                                <div class="news-right__item-epic__bottom">
+                                    <div class="news-right__item-epic__bottom-text lang" key='news-right__item-epic__bottom-text-1'>
+                                        За неделю: <span>3 220</span>
+                                    </div>
+                                    <div class="news-right__item-epic__bottom-text lang" key='news-right__item-epic__bottom-text-2'>
+                                        За месяц: <span>15 200</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="news-right__download">
+                            <div class="news-right__download-img">
+                                <img src="img/server-3.png" alt="">
+                            </div>
+                            <a href="#" class="news-right__download-text lang" key='news-right__download-text'>DOWNLOAD</a>
+                        </div>
+                        <div class="news-right__donors">
+                            <h3 class="news-right__donors-title">
+                                <span class="lang" key='news-right__donors-title-1'>TOP 10</span> 
+                                <p class="lang" key='news-right__donors-title-2'>DONORS</p>
+                            </h3>
+                            <div class="news-right__donors-item news-right__donors-item-bg">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number">№</div>
+                                    <div class="news-right__donors-item__name">NAME</div>
+                                </div>
+                                <div class="news-right__donors-item__rating">RATING</div>
+                            </div>
+                            <div class="news-right__donors-item">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number news-right__donors-item__number-yellow">1.</div>
+                                    <div class="news-right__donors-item__name news-right__donors-item__name-yellow">Saro</div>
+                                </div>
+                                <div class="news-right__donors-item__rating news-right__donors-item__rating-yellow">189464</div>
+                            </div>
+                            <div class="news-right__donors-item news-right__donors-item-bg">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number news-right__donors-item__number-yellow">2.</div>
+                                    <div class="news-right__donors-item__name news-right__donors-item__name-yellow">Agusta</div>
+                                </div>
+                                <div class="news-right__donors-item__rating news-right__donors-item__rating-yellow">167845</div>
+                            </div>
+                            <div class="news-right__donors-item">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number news-right__donors-item__number-yellow">3.</div>
+                                    <div class="news-right__donors-item__name news-right__donors-item__name-yellow">ImTheFirstLegend</div>
+                                </div>
+                                <div class="news-right__donors-item__rating news-right__donors-item__rating-yellow">167845</div>
+                            </div>
+                            <div class="news-right__donors-item news-right__donors-item-bg">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number">4.</div>
+                                    <div class="news-right__donors-item__name">NameName</div>
+                                </div>
+                                <div class="news-right__donors-item__rating">167845</div>
+                            </div>
+                            <div class="news-right__donors-item">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number">5.</div>
+                                    <div class="news-right__donors-item__name">NameName</div>
+                                </div>
+                                <div class="news-right__donors-item__rating">167845</div>
+                            </div>
+                            <div class="news-right__donors-item news-right__donors-item-bg">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number">6.</div>
+                                    <div class="news-right__donors-item__name">NameName</div>
+                                </div>
+                                <div class="news-right__donors-item__rating">167845</div>
+                            </div>
+                            <div class="news-right__donors-item">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number">7.</div>
+                                    <div class="news-right__donors-item__name">NameName</div>
+                                </div>
+                                <div class="news-right__donors-item__rating">167845</div>
+                            </div>
+                            <div class="news-right__donors-item news-right__donors-item-bg">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number">8.</div>
+                                    <div class="news-right__donors-item__name">NameName</div>
+                                </div>
+                                <div class="news-right__donors-item__rating">167845</div>
+                            </div>
+                            <div class="news-right__donors-item">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number">9.</div>
+                                    <div class="news-right__donors-item__name">NameName</div>
+                                </div>
+                                <div class="news-right__donors-item__rating">167845</div>
+                            </div>
+                            <div class="news-right__donors-item news-right__donors-item-bg">
+                                <div class="news-right__donors-item__info">
+                                    <div class="news-right__donors-item__number">10.</div>
+                                    <div class="news-right__donors-item__name">NameName</div>
+                                </div>
+                                <div class="news-right__donors-item__rating">167845</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="strimers">
+            <div class="container">
+                <div class="strimers-top">
+                    <h2 class="section-title lang" key='section-title-3'>Наши стримеры</h2>
+                    <a href="#" class="strimers-top__link strimers-top__link-desctop lang" key='strimers-top__link'>КАК ДОБАВИТЬ СТРИМ ?</a>
+                </div>
+                <div class="strimers-wrapper">
+                    <div class="strimers-item">
+                        <div class="strimers-item__img">
+                            <img src="img/strimers-1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="strimers-item">
+                        <div class="strimers-item__img">
+                            <img src="img/strimers-1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="strimers-item">
+                        <div class="strimers-item__img">
+                            <img src="img/strimers-1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="strimers-item">
+                        <div class="strimers-item__img">
+                            <img src="img/strimers-1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="strimers-item">
+                        <div class="strimers-item__img">
+                            <img src="img/strimers-1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="strimers-item">
+                        <div class="strimers-item__img">
+                            <img src="img/strimers-1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="strimers-item">
+                        <div class="strimers-item__img">
+                            <img src="img/strimers-1.png" alt="">
+                        </div>
+                    </div>
+                    <div class="strimers-item">
+                        <div class="strimers-item__img">
+                            <img src="img/strimers-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="strimers-top__link strimers-top__link-mobile lang" key='strimers-top__link '>КАК ДОБАВИТЬ СТРИМ ?</a>
+            </div>
+        </div>
+        <div class="socials">
+            <div class="container">
+                <div class="socials-wrapper">
+                    <div class="socials-content">
+                        <h2 class="section-title section-title-mb lang" key='section-title-4'>мы В СОЦСЕТЯХ</h2>
+                        <div class="socials-content__text lang" key='socials-content__text'>Присоединяйтесь к нам</div>
+                    </div>
+                    <div class="socials-icons">
+                        <a href="#" class="socials-icons__item">
+                            <svg class="socials-icons__item-icon">
+                                <use xlink:href="#icon1"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="socials-icons__item">
+                            <svg class="socials-icons__item-icon">
+                                <use xlink:href="#icon2"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="socials-icons__item">
+                            <svg class="socials-icons__item-icon">
+                                <use xlink:href="#icon3"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="socials-icons__item">
+                            <svg class="socials-icons__item-icon">
+                                <use xlink:href="#icon4"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-wrapper">
+                    <div class="footer-item">
+                        <div class="footer-item__logo">
+                            <img src="img/footer-logo.png" alt="">
+                            <span>REBORN - GAME . NET</span>
+                        </div>
+                        <div class="footer-item__text">© 2021 REBORN GAME</div>
+                    </div>
+                    <div class="footer-item">
+                        <ul class="footer-item__list">
+                            <li class="footer-item__list-li">
+                                <a class="footer-item__list-li lang" href="#" key='footer-item__list-li-1'>Поддержка</a>
+                            </li>
+                            <li class="footer-item__list-li">
+                                <a class="footer-item__list-li lang" href="#" key='footer-item__list-li-2'>Регистрация</a>
+                            </li>
+                            <li class="footer-item__list-li">
+                                <a class="footer-item__list-li lang" href="#" key='footer-item__list-li-3'>База знаний</a>
+                            </li>
+                            <li class="footer-item__list-li">
+                                <a class="footer-item__list-li lang" href="#"  key='footer-item__list-li-4'>Новости</a>
+                            </li>
+                        </ul>
+                        <div class="footer-item__regulations">
+                            <a href="#" class="footer-item__regulations-text lang" key='footer-item__regulations-text-1'>
+                                Пользовательское соглашение
+                            </a>
+                            <a href="#" class="footer-item__regulations-text lang" key='footer-item__regulations-text-2'>
+                                Политика конфиденциальности
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-item">
+                        <div class="footer-item__number">18+</div>
+                    </div>
+                    <div class="footer-item">
+                        <div class="footer-item__languages footer-item__languages-desctop">
+                            <div class="header-top__right-languages__active">RUSSIAN</div>
+                            <ul class="footer-item__languages-list">
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="ru" href="#">RUSSIAN</a>
+                                </li>
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="en" href="#">ENGLISH</a>
+                                </li>
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="ch" href="#">CHINA</a>
+                                </li>
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="ko" href="#">KOREAN</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="footer-item__link footer-item__link-desctop">ElitePvPers.com</a>
+                    </div>
+                    <div class="footer-item__mobile">
+                        <div class="footer-item__number">18+</div>
+                        <div class="footer-item__languages footer-item__languages-desctop">
+                            <div class="header-top__right-languages__active">RUSSIAN</div>
+                            <ul class="footer-item__languages-list">
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="ru" href="#">RUSSIAN</a>
+                                </li>
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="en" href="#">ENGLISH</a>
+                                </li>
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="ch" href="#">CHINA</a>
+                                </li>
+                                <li class="header-top__right-languages__list-item">
+                                    <a class="translate" id="ko" href="#">KOREAN</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="#" class="footer-item__link footer-item__link-mobile">ElitePvPers.com</a>
+                </div>
+            </div>
+        </footer> 
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

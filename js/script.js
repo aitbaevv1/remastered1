@@ -1,0 +1,210 @@
+$(document).ready(function() {
+    $('.main-slider').slick({
+        centerMode: true,
+        centerPadding: '300px',
+        slidesToShow: 1,
+        infinite: true,
+        // centerMode: true,
+        dots: true,
+
+        responsive:[
+            {
+                breakpoint: 1000,
+                settings: {
+                    centerPadding: '150px',
+                }
+            },
+            {
+                breakpoint:768,
+                settings: {
+                    centerPadding: '50px',
+                }
+            },
+            {
+                breakpoint:600,
+                settings: {
+                    centerPadding: '0px',
+                    dots: false,
+                }
+            }
+
+        ],
+    });
+    $('.header-burger').click(function() {
+        $('.header-burger, .header-mobile, .header-top,  body').toggleClass('active');
+    });
+
+    let arrLang = {
+        'en': {
+            'games': 'GAMES',
+            'news': 'NEWS',
+            'community': 'COMMUNITY',
+            'support': 'SUPPORT',
+            'header-top__right-link': 'ACCOUNT',
+            'header-bottom__left-nav__list-li-1': 'Home',
+            'header-bottom__left-nav__list-li-2': 'Auction',
+            'header-bottom__left-nav__list-li-3': 'Statistics',
+            'header-bottom__left-nav__list-li-4': 'Knowledge base',
+            'header-bottom__left-nav__list-li-5': 'Partnership',
+            'header-bottom__right-button': 'CHECK IN',
+            'main-title': 'THE BEST OF ALL EPICS IN ONE GAME',
+            'main-start__content-text': 'Start your journey through the new amazing world of Rappelz right now!',
+            'main-start__content-btn': 'START PLAYING',
+            'section-title-1': 'Latest news',
+            'news-left__content-title': 'Results of technical work 28.05.2021',
+            'news-left__content-text': 'Unscheduled technical work has been completed. We suggest that you familiarize yourself with the list of changes.',
+            'news-left__content-bottom__text': 'Other',
+            'news-left__content-bottom__link': 'More detailed',
+            'section-title-2': 'Server status',
+            'news-right__status-right': 'Online: 645',
+            'news-right__status-right-2': 'Online: 232',
+            'news-right__item-epic__text': 'Number of unique players',
+            'news-right__item-epic__bottom-text-1': 'For a week: 3220',
+            'news-right__item-epic__bottom-text-2': 'Per month: 15200',
+            'news-right__download-text': 'DOWNLOAD',
+            'news-right__donors-title-1': 'TOP 10',
+            'news-right__donors-title-2': 'DONORS',
+            'section-title-3': 'Our streamers',
+            'strimers-top__link': 'HOW DO I ADD A STREAM ?',
+            'section-title-4': 'WE ARE IN SOCIAL NETWORKS',
+            'socials-content__text': 'Join us now',
+            'footer-item__list-li-1': 'Support',
+            'footer-item__list-li-2': 'Check in',
+            'footer-item__list-li-3': 'Knowledge base',
+            'footer-item__list-li-4': 'News',
+            'footer-item__regulations-text-1': 'User Agreement',
+            'footer-item__regulations-text-2': 'Privacy Policy',
+        },
+        'ru': {
+            'games': 'ИГРЫ',
+            'news': 'НОВОСТИ',
+            'community': 'СООБЩЕСТВО',
+            'support': 'ПОДДЕРЖКА',
+            'header-top__right-link': 'УЧЕТНАЯ ЗАПИСЬ',
+            'header-bottom__left-nav__list-li-1': 'Главная',
+            'header-bottom__left-nav__list-li-2': 'Аукцион',
+            'header-bottom__left-nav__list-li-3': 'Статистика',
+            'header-bottom__left-nav__list-li-4': 'База знаний',
+            'header-bottom__left-nav__list-li-5': 'Партнерство',
+            'header-bottom__right-button': 'РЕГИСТРАЦИЯ',
+            'main-title': 'ЛУЧШЕЕ ИЗ ВСЕХ ЭПИКОВ В ОДНОЙ ИГРЕ',
+            'main-start__content-text': 'Начни свое путешествие по новому удивительному миру Rappelz прямо сейчас!',
+            'main-start__content-btn': 'НАЧАТЬ ИГРАТЬ',
+            'section-title-1': 'Последние новости',
+            'news-left__content-title': 'Результаты технических работ 28.05.2021',
+            'news-left__content-text': 'Внеплановые технические работы завершены. Предлагаем ознакомиться со списком изменений.',
+            'news-left__content-bottom__text': 'Другое',
+            'news-left__content-bottom__link': 'Подробнее',
+            'section-title-2': 'Статус серверов',
+            'news-right__status-right': 'Онлайн: 645',
+            'news-right__status-right-2': 'Онлайн: 232',
+            'news-right__item-epic__text': 'Кол-во уникальных игроков',
+            'news-right__item-epic__bottom-text-1': 'За неделю: 3220',
+            'news-right__item-epic__bottom-text-2': 'За месяц: 15200',
+            'news-right__download-text': 'СКАЧАТЬ',
+            'news-right__donors-title-1': 'ТОП 10',
+            'news-right__donors-title-2': 'ДОНОРЫ',
+            'section-title-3': 'Наши стримеры',
+            'strimers-top__link': 'КАК ДОБАВИТЬ СТРИМ ?',
+            'section-title-4': 'МЫ В СОЦСЕТЯХ',
+            'socials-content__text': 'Присоединяйтесь к нам',
+            'footer-item__list-li-1': 'Поддержка',
+            'footer-item__list-li-2': 'Регистрация',
+            'footer-item__list-li-3': 'База знаний',
+            'footer-item__list-li-4': 'Новости',
+            'footer-item__regulations-text-1': 'Пользовательское соглашение',
+            'footer-item__regulations-text-2': 'Политика конфиденциальности'  
+        },
+        'ch': {
+            'games': '游戏',
+            'news': '新闻资讯',
+            'community': '社区',
+            'support': '支持',
+            'header-top__right-link': '账户',
+            'header-bottom__left-nav__list-li-1': '主',
+            'header-bottom__left-nav__list-li-2': '拍卖',
+            'header-bottom__left-nav__list-li-3': '统计',
+            'header-bottom__left-nav__list-li-4': '知识库',
+            'header-bottom__left-nav__list-li-5': '伙伴关系',
+            'header-bottom__right-button': '注册',
+            'main-title': '最好的所有史诗在一场比赛中',
+            'main-start__content-text': '开始你的旅程，通过雪睛的新的惊人的世界吧',
+            'main-start__content-btn': '开始播放',
+            'section-title-1': '最新消息',
+            'news-left__content-title': '技术工作的结果28.05.2021',
+            'news-left__content-text': '计划外的技术工作已经完成。 我们建议您熟悉更改列表.',
+            'news-left__content-bottom__text': '其他',
+            'news-left__content-bottom__link': '更详细',
+            'section-title-2': '服务器状态',
+            'news-right__status-right': '在线：645',
+            'news-right__status-right-2': '在线：232',
+            'news-right__item-epic__text': '独特玩家数量',
+            'news-right__item-epic__bottom-text-1': '每周：3220',
+            'news-right__item-epic__bottom-text-2': '每月：15200',
+            'news-right__download-text': '下载',
+            'news-right__donors-title-1': '前10名',
+            'news-right__donors-title-2': '捐助者',
+            'section-title-3': '我们的飘带',
+            'strimers-top__link': '如何添加流？',
+            'section-title-4': '我们在社交网络',
+            'socials-content__text': '立即加入我们',
+            'footer-item__list-li-1': '支持',
+            'footer-item__list-li-2': '注册',
+            'footer-item__list-li-3': '知识库',
+            'footer-item__list-li-4': '新闻资讯',
+            'footer-item__regulations-text-1': '用户协议',
+            'footer-item__regulations-text-2': '隐私政策'
+        },
+        'ko': {
+            'games': '게임',
+            'news': '뉴스',
+            'community': '커뮤니티',
+            'support': '지원',
+            'header-top__right-link': '계정',
+            'header-bottom__left-nav__list-li-1': '메인',
+            'header-bottom__left-nav__list-li-2': '경매',
+            'header-bottom__left-nav__list-li-3': '통계',
+            'header-bottom__left-nav__list-li-4': '기술 자료',
+            'header-bottom__left-nav__list-li-5': '파트너쉽',
+            'header-bottom__right-button': '등록',
+            'main-title': '하나의 게임에서 모든 서사시의 최고',
+            'main-start__content-text': '지금 Rappelz 의 새로운 놀라운 세계를 통해 여행을 시작합니다!',
+            'main-start__content-btn': '재생 시작',
+            'section-title-1': '최신 뉴스',
+            'news-left__content-title': '기술 작업 결과 28.05.2021',
+            'news-left__content-text': '예정되지 않은 기술 작업이 완료되었습니다. 변경 사항 목록을 숙지하는 것이 좋습니다.',
+            'news-left__content-bottom__text': '기타',
+            'news-left__content-bottom__link': '더 자세한',
+            'section-title-2': '서버 상태',
+            'news-right__status-right': '온라인:645',
+            'news-right__status-right-2': '온라인:232',
+            'news-right__item-epic__text': '고유 플레이어 수',
+            'news-right__item-epic__bottom-text-1': '주당:3220',
+            'news-right__item-epic__bottom-text-2': '달 당:15200',
+            'news-right__download-text': '다운로드',
+            'news-right__donors-title-1': '톱 10',
+            'news-right__donors-title-2': '기증자',
+            'section-title-3': '우리의 깃발',
+            'strimers-top__link': '스트림을 어떻게 추가합니까?',
+            'section-title-4': '우리는 소셜 네트워크에 있습니다',
+            'socials-content__text': '지금 우리와 함께하십시오',
+            'footer-item__list-li-1': '지원',
+            'footer-item__list-li-2': '등록',
+            'footer-item__list-li-3': '기술 자료',
+            'footer-item__list-li-4': '뉴스',
+            'footer-item__regulations-text-1': '사용자 계약',
+            'footer-item__regulations-text-2': '개인정보 보호정책'
+        },
+    }
+    $(function() {
+		$(".translate").click(function() {
+			let lang = $(this).attr('id');
+            let text = $(this).text();
+			
+			$(".lang").each(function(index, item) {
+				$(this).text(arrLang[lang][$(this).attr('key')]);
+                $('.header-top__right-languages__active').text(text);
+			});
+		})
+	});
+})
